@@ -1,0 +1,20 @@
+services:
+  producer-service:
+    build: ./Producer
+    ports:
+      - "8000:8000"
+    networks:
+      - snssqs
+
+
+  consumer-service:
+    build: ./Consumer1
+    ports:
+      - "8001:8001"
+    networks:
+      - snssqs
+
+
+
+networks:
+  snssqs:
